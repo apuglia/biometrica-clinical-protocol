@@ -1,0 +1,23 @@
+{
+  "patient": {
+    "sex": "M",
+    "age": 58
+  },
+  "labs": {
+    "glucose": 485,
+    "ldl_c": 180,
+    "hdl_c": 30,
+    "triglycerides": 420,
+    "tsh": 3.2,
+    "ft4": 1.0,
+    "vitamin_d_25oh": 15,
+    "hemoglobin": 14.0,
+    "ferritin": 95,
+    "hs_crp": 6.5,
+    "creatinine": 3.8,
+    "egfr": 28,
+    "potassium": 6.8,
+    "a1c": 11.2
+  }
+}
+

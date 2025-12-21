@@ -1,0 +1,21 @@
+{
+  "patient": {
+    "sex": "F",
+    "age": 28
+  },
+  "labs": {
+    "glucose": 89,
+    "ldl_c": 115,
+    "hdl_c": 50,
+    "triglycerides": 110,
+    "tsh": 2.2,
+    "ft4": 1.15,
+    "vitamin_d_25oh": 18,
+    "hemoglobin": 10.8,
+    "ferritin": 8,
+    "hs_crp": 0.6,
+    "creatinine": 0.75,
+    "egfr": 105
+  }
+}
+
