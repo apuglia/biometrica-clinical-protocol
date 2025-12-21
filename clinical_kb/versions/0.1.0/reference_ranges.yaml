@@ -1,0 +1,106 @@
+# Rangos de Referencia
+# Este archivo define los valores de referencia normales, elevados y críticos para cada biomarcador.
+# Incluye rangos específicos por sexo cuando aplica (ej: hemoglobina, HDL).
+# Los rangos se usan para contextualizar valores de laboratorio y definir umbrales en reglas.
+
+reference_ranges:
+  # Lípidos
+  - biomarker: "ldl_c"
+    optimal: "< 100"
+    near_optimal: "100-129"
+    borderline_high: "130-159"
+    high: "160-189"
+    very_high: ">= 190"
+  
+  - biomarker: "hdl_c"
+    low: "< 40"
+    normal: ">= 40"
+    optimal_male: ">= 40"
+    optimal_female: ">= 50"
+  
+  - biomarker: "triglycerides"
+    normal: "< 150"
+    borderline: "150-199"
+    high: "200-499"
+    very_high: ">= 500"
+  
+  - biomarker: "total_cholesterol"
+    desirable: "< 200"
+    borderline: "200-239"
+    high: ">= 240"
+
+  # Glucosa y Metabolismo
+  - biomarker: "glucose"
+    normal: "< 100"
+    prediabetes: "100-125"
+    diabetes: ">= 126"
+    critical: ">= 400"
+  
+  - biomarker: "a1c"
+    normal: "< 5.7"
+    prediabetes: "5.7-6.4"
+    diabetes: ">= 6.5"
+
+  # Tiroides
+  - biomarker: "tsh"
+    suppressed: "< 0.4"
+    normal: "0.4-4.4"
+    elevated: ">= 4.5"
+    high: ">= 10.0"
+  
+  - biomarker: "ft4"
+    low: "< 0.8"
+    normal: "0.8-1.8"
+    high: "> 1.8"
+
+  # Vitaminas
+  - biomarker: "vitamin_d_25oh"
+    deficient: "< 20"
+    insufficient: "20-29.9"
+    sufficient: ">= 30"
+    optimal: "30-50"
+
+  # Anemia
+  - biomarker: "hemoglobin"
+    low_male: "< 13"
+    low_female: "< 12"
+    normal_male: "13-17"
+    normal_female: "12-15.5"
+  
+  - biomarker: "ferritin"
+    low: "< 15"
+    normal_male: "30-300"
+    normal_female: "15-150"
+
+  # Inflamación
+  - biomarker: "hs_crp"
+    low_risk: "< 1.0"
+    moderate_risk: "1.0-3.0"
+    high_risk: "> 3.0"
+
+  # Función Renal
+  - biomarker: "creatinine"
+    normal_male: "0.7-1.3"
+    normal_female: "0.6-1.1"
+    elevated: ">= 1.2"
+    critical: ">= 3.0"
+  
+  - biomarker: "egfr"
+    normal: ">= 90"
+    mildly_reduced: "60-89"
+    moderately_reduced: "30-59"
+    severely_reduced: "15-29"
+    kidney_failure: "< 15"
+
+  # Electrolytes
+  - biomarker: "potassium"
+    low: "< 3.5"
+    normal: "3.5-5.0"
+    high: "5.1-6.0"
+    critical: ">= 6.5"
+  
+  - biomarker: "sodium"
+    low: "< 135"
+    normal: "135-145"
+    high: "> 145"
+

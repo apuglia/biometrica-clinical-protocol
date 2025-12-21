@@ -1,0 +1,64 @@
+# Acciones Recomendadas
+# Este archivo define las acciones que se pueden recomendar a pacientes cuando se dispara una regla.
+# Incluye acciones genéricas (consultar médico) y específicas por categoría (suplementación, cambios de estilo de vida).
+# Las acciones se referencian por ID en las reglas y pueden incluir parámetros (ej: tiempo para repetir prueba).
+
+actions:
+  # Acciones genéricas
+  - id: "consult_physician"
+    text: "Consulta con tu médico para evaluación completa"
+    priority: "high"
+  
+  - id: "consult_specialist"
+    text: "Consulta con un especialista"
+    priority: "high"
+  
+  - id: "repeat_test"
+    text: "Repite la prueba en {timeframe}"
+    priority: "medium"
+  
+  - id: "lifestyle_changes"
+    text: "Considera cambios en estilo de vida"
+    priority: "medium"
+  
+  - id: "urgent_care"
+    text: "Busca atención médica urgente"
+    priority: "critical"
+  
+  # Acciones específicas por categoría
+  - id: "ldl_diet"
+    text: "Considera cambios en dieta (reducir grasas saturadas y trans)"
+    category: "lipid"
+  
+  - id: "ldl_medication"
+    text: "Tu médico puede recomendar medicamentos según tu riesgo cardiovascular total"
+    category: "lipid"
+  
+  - id: "glucose_diet"
+    text: "Considera cambios en dieta (reducir azúcares y carbohidratos refinados)"
+    category: "metabolism"
+  
+  - id: "thyroid_specialist"
+    text: "Consulta con endocrinólogo para evaluación completa"
+    category: "thyroid"
+  
+  - id: "vitamin_d_supplement"
+    text: "Discute con tu médico sobre suplementación con vitamina D"
+    category: "nutrition"
+  
+  - id: "iron_supplement"
+    text: "Consulta con tu médico sobre suplementación con hierro"
+    category: "hematology"
+  
+  - id: "renal_specialist"
+    text: "Consulta con nefrólogo para evaluación completa"
+    category: "renal"
+  
+  - id: "monitor_bp"
+    text: "Monitorea presión arterial regularmente"
+    category: "renal"
+  
+  - id: "avoid_potassium"
+    text: "Evita alimentos altos en potasio hasta consultar con médico"
+    category: "electrolyte"
+

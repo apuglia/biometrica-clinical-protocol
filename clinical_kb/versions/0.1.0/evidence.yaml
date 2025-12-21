@@ -1,0 +1,110 @@
+# Evidencia Clínica
+# Este archivo vincula cada regla con referencias y guías clínicas que respaldan su criterio.
+# Incluye citas de organizaciones médicas (ADA, AHA, WHO, etc.) y años de publicación.
+# Se usa para transparencia, auditoría y actualización de reglas basadas en nueva evidencia.
+
+evidence:
+  # Evidencia para reglas de lípidos
+  - rule_id: "ldl_very_high"
+    sources:
+      - type: "guideline"
+        citation: "ATP III Guidelines - LDL ≥ 190 mg/dL indicates very high risk"
+        year: 2001
+      - type: "guideline"
+        citation: "ACC/AHA Guideline - LDL ≥ 190 mg/dL requires statin therapy consideration"
+        year: 2018
+  
+  - rule_id: "hdl_low"
+    sources:
+      - type: "guideline"
+        citation: "ATP III Guidelines - HDL < 40 mg/dL is a risk factor"
+        year: 2001
+  
+  - rule_id: "triglycerides_very_high"
+    sources:
+      - type: "guideline"
+        citation: "AHA Scientific Statement - Triglycerides ≥ 500 mg/dL increase pancreatitis risk"
+        year: 2011
+
+  # Evidencia para reglas de glucosa
+  - rule_id: "glucose_high"
+    sources:
+      - type: "guideline"
+        citation: "ADA Standards of Care - Fasting glucose ≥ 126 mg/dL suggests diabetes"
+        year: 2024
+      - type: "guideline"
+        citation: "WHO - Diabetes diagnostic criteria"
+        year: 2006
+  
+  - rule_id: "a1c_prediabetes"
+    sources:
+      - type: "guideline"
+        citation: "ADA Standards of Care - A1C 5.7-6.4% indicates prediabetes"
+        year: 2024
+
+  # Evidencia para reglas de tiroides
+  - rule_id: "tsh_high"
+    sources:
+      - type: "guideline"
+        citation: "ATA Guidelines - TSH ≥ 4.5 mUI/L suggests hypothyroidism"
+        year: 2014
+  
+  - rule_id: "ft4_low"
+    sources:
+      - type: "guideline"
+        citation: "ATA Guidelines - FT4 < 0.8 ng/dL indicates hypothyroidism"
+        year: 2014
+
+  # Evidencia para vitamina D
+  - rule_id: "vitamin_d_deficient"
+    sources:
+      - type: "guideline"
+        citation: "Endocrine Society - Vitamin D < 20 ng/mL is deficiency"
+        year: 2011
+
+  # Evidencia para anemia
+  - rule_id: "hemoglobin_low"
+    sources:
+      - type: "guideline"
+        citation: "WHO - Hemoglobin < 12 g/dL indicates anemia in women"
+        year: 2011
+  
+  - rule_id: "ferritin_low"
+    sources:
+      - type: "guideline"
+        citation: "WHO - Ferritin < 15 ng/mL indicates iron deficiency"
+        year: 2011
+
+  # Evidencia para inflamación
+  - rule_id: "hs_crp_high_risk"
+    sources:
+      - type: "guideline"
+        citation: "AHA/CDC - hs-CRP > 3.0 mg/L indicates high cardiovascular risk"
+        year: 2003
+
+  # Evidencia para función renal
+  - rule_id: "egfr_reduced"
+    sources:
+      - type: "guideline"
+        citation: "KDIGO Guidelines - eGFR < 60 indicates CKD stage 3-5"
+        year: 2012
+
+  # Evidencia para red flags
+  - rule_id: "redflag_glucose_critical"
+    sources:
+      - type: "guideline"
+        citation: "ADA Standards - Glucose ≥ 400 mg/dL is medical emergency"
+        year: 2024
+  
+  - rule_id: "redflag_potassium_critical"
+    sources:
+      - type: "guideline"
+        citation: "KDIGO Guidelines - Potassium ≥ 6.5 mEq/L is hyperkalemia emergency"
+        year: 2020
+  
+  - rule_id: "redflag_creatinine_critical"
+    sources:
+      - type: "guideline"
+        citation: "KDIGO Guidelines - Creatinine ≥ 3.0 mg/dL indicates severe renal dysfunction"
+        year: 2012
+

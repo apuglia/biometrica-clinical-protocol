@@ -1,0 +1,13 @@
+# Metadata de versión
+# Este archivo contiene información sobre la versión del knowledge base clínico:
+# número de versión, fecha de lanzamiento, estado, descripción y metadatos de mantenimiento.
+# Es usado para tracking y gestión de versiones del knowledge base.
+
+version: "0.1.0"
+release_date: "2025-01-01"
+status: "active"
+description: "Versión inicial del knowledge base clínico para evaluación de biomarcadores"
+last_updated: "2025-01-01"
+maintainer: "Biometrica Clinical Team"
+license: "proprietary"
+

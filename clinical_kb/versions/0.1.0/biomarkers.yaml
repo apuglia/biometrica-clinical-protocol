@@ -1,0 +1,110 @@
+# Biomarcadores
+# Este archivo define todos los biomarcadores disponibles en el sistema.
+# Cada biomarcador incluye: ID único, nombre legible, unidad de medida, categoría y descripción.
+# Los biomarcadores se usan en reglas, reference ranges y para validar inputs de laboratorio.
+
+biomarkers:
+  # Lípidos
+  - id: "ldl_c"
+    name: "Colesterol LDL"
+    unit: "mg/dL"
+    category: "lipid"
+    description: "Colesterol de lipoproteínas de baja densidad"
+  
+  - id: "hdl_c"
+    name: "Colesterol HDL"
+    unit: "mg/dL"
+    category: "lipid"
+    description: "Colesterol de lipoproteínas de alta densidad"
+  
+  - id: "triglycerides"
+    name: "Triglicéridos"
+    unit: "mg/dL"
+    category: "lipid"
+    description: "Nivel de triglicéridos en sangre"
+  
+  - id: "total_cholesterol"
+    name: "Colesterol Total"
+    unit: "mg/dL"
+    category: "lipid"
+    description: "Colesterol total en sangre"
+
+  # Glucosa y Metabolismo
+  - id: "glucose"
+    name: "Glucosa en ayunas"
+    unit: "mg/dL"
+    category: "metabolism"
+    description: "Nivel de glucosa en sangre después de ayuno"
+  
+  - id: "a1c"
+    name: "Hemoglobina Glicosilada"
+    unit: "%"
+    category: "metabolism"
+    description: "Hemoglobina A1C - promedio de glucosa en 2-3 meses"
+
+  # Tiroides
+  - id: "tsh"
+    name: "Hormona Estimulante de la Tiroides"
+    unit: "mUI/L"
+    category: "thyroid"
+    description: "TSH - hormona estimulante de la tiroides"
+  
+  - id: "ft4"
+    name: "Tiroxina Libre"
+    unit: "ng/dL"
+    category: "thyroid"
+    description: "T4 libre - tiroxina no unida a proteínas"
+
+  # Vitaminas
+  - id: "vitamin_d_25oh"
+    name: "Vitamina D (25-OH)"
+    unit: "ng/mL"
+    category: "nutrition"
+    description: "25-hidroxivitamina D - forma principal de vitamina D en sangre"
+
+  # Anemia y Hierro
+  - id: "hemoglobin"
+    name: "Hemoglobina"
+    unit: "g/dL"
+    category: "hematology"
+    description: "Hemoglobina en sangre"
+  
+  - id: "ferritin"
+    name: "Ferritina"
+    unit: "ng/mL"
+    category: "hematology"
+    description: "Ferritina - proteína que almacena hierro"
+
+  # Inflamación
+  - id: "hs_crp"
+    name: "Proteína C Reactiva ultrasensible"
+    unit: "mg/L"
+    category: "inflammation"
+    description: "hs-CRP - marcador de inflamación sistémica"
+
+  # Función Renal
+  - id: "creatinine"
+    name: "Creatinina"
+    unit: "mg/dL"
+    category: "renal"
+    description: "Creatinina sérica - marcador de función renal"
+  
+  - id: "egfr"
+    name: "Tasa de Filtración Glomerular Estimada"
+    unit: "mL/min/1.73m²"
+    category: "renal"
+    description: "eGFR - estimación de la función renal"
+
+  # Electrolytes
+  - id: "potassium"
+    name: "Potasio"
+    unit: "mEq/L"
+    category: "electrolyte"
+    description: "Nivel de potasio sérico"
+  
+  - id: "sodium"
+    name: "Sodio"
+    unit: "mEq/L"
+    category: "electrolyte"
+    description: "Nivel de sodio sérico"
+

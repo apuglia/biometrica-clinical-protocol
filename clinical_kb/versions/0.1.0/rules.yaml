@@ -1,0 +1,227 @@
+# Reglas Clínicas
+# Este archivo contiene las reglas de evaluación clínica que se aplican a los resultados de laboratorio.
+# Cada regla define: condiciones de disparo (when), severidad, mensaje al paciente, y acciones recomendadas.
+# Las reglas usan operadores de comparación (> , >=, <, <=, between) y pueden tener múltiples condiciones (all/any).
+
+rules:
+  # Reglas de lípidos
+  - id: "ldl_very_high"
+    name: "LDL muy elevado"
+    enabled: true
+    when:
+      all:
+        - biomarker: "ldl_c"
+          operator: ">="
+          value: 190
+    then:
+      severity: "orange"
+      headline: "Colesterol LDL muy elevado: requiere evaluación y posible tratamiento"
+      why: "LDL ≥ 190 mg/dL se asocia con alto riesgo cardiovascular"
+      actions:
+        - "ldl_diet"
+        - "ldl_medication"
+        - "lifestyle_changes"
+        - "repeat_test:3-6 meses"
+      tags: ["lípidos", "cardiovascular", "ldl"]
+  
+  - id: "hdl_low"
+    name: "HDL bajo"
+    enabled: true
+    when:
+      all:
+        - biomarker: "hdl_c"
+          operator: "<"
+          value: 40
+    then:
+      severity: "yellow"
+      headline: "Colesterol HDL bajo: factor de riesgo cardiovascular"
+      why: "HDL < 40 mg/dL se considera un factor de riesgo cardiovascular"
+      actions:
+        - "lifestyle_changes"
+        - "consult_physician"
+      tags: ["lípidos", "cardiovascular", "hdl"]
+  
+  - id: "triglycerides_very_high"
+    name: "Triglicéridos muy elevados"
+    enabled: true
+    when:
+      all:
+        - biomarker: "triglycerides"
+          operator: ">="
+          value: 500
+    then:
+      severity: "orange"
+      headline: "Triglicéridos muy elevados: riesgo de pancreatitis"
+      why: "Triglicéridos ≥ 500 mg/dL aumentan el riesgo de pancreatitis aguda"
+      actions:
+        - "urgent_care"
+        - "consult_physician"
+        - "lifestyle_changes"
+      tags: ["lípidos", "triglicéridos", "pancreatitis"]
+
+  # Reglas de glucosa
+  - id: "glucose_high"
+    name: "Glucosa elevada"
+    enabled: true
+    when:
+      all:
+        - biomarker: "glucose"
+          operator: ">="
+          value: 126
+    then:
+      severity: "orange"
+      headline: "Glucosa elevada: posible diabetes o prediabetes"
+      why: "Glucosa ≥ 126 mg/dL en ayunas sugiere diabetes o prediabetes"
+      actions:
+        - "consult_physician"
+        - "glucose_diet"
+        - "lifestyle_changes"
+      tags: ["glucosa", "diabetes", "metabolismo"]
+  
+  - id: "a1c_prediabetes"
+    name: "A1C en rango de prediabetes"
+    enabled: true
+    when:
+      all:
+        - biomarker: "a1c"
+          operator: "between"
+          value1: 5.7
+          value2: 6.4
+    then:
+      severity: "yellow"
+      headline: "A1C en rango de prediabetes: intervención temprana recomendada"
+      why: "A1C entre 5.7-6.4% indica prediabetes"
+      actions:
+        - "consult_physician"
+        - "lifestyle_changes"
+        - "repeat_test:6 meses"
+      tags: ["prediabetes", "a1c"]
+
+  # Reglas de tiroides
+  - id: "tsh_high"
+    name: "TSH elevado"
+    enabled: true
+    when:
+      all:
+        - biomarker: "tsh"
+          operator: ">="
+          value: 4.5
+    then:
+      severity: "yellow"
+      headline: "TSH elevado: posible hipotiroidismo"
+      why: "TSH ≥ 4.5 mUI/L sugiere posible hipotiroidismo"
+      actions:
+        - "thyroid_specialist"
+        - "repeat_test:6-12 semanas"
+      tags: ["tiroides", "tsh", "hipotiroidismo"]
+  
+  - id: "ft4_low"
+    name: "FT4 bajo"
+    enabled: true
+    when:
+      all:
+        - biomarker: "ft4"
+          operator: "<"
+          value: 0.8
+    then:
+      severity: "orange"
+      headline: "Tiroxina libre (FT4) baja: hipotiroidismo confirmado o severo"
+      why: "FT4 < 0.8 ng/dL indica hipotiroidismo"
+      actions:
+        - "thyroid_specialist"
+        - "urgent_care"
+      tags: ["tiroides", "ft4", "hipotiroidismo"]
+
+  # Reglas de vitamina D
+  - id: "vitamin_d_deficient"
+    name: "Vitamina D deficiente"
+    enabled: true
+    when:
+      all:
+        - biomarker: "vitamin_d_25oh"
+          operator: "<"
+          value: 20
+    then:
+      severity: "yellow"
+      headline: "Vitamina D deficiente: suplementación recomendada"
+      why: "Vitamina D < 20 ng/mL se considera deficiencia"
+      actions:
+        - "vitamin_d_supplement"
+        - "lifestyle_changes"
+        - "repeat_test:3 meses"
+      tags: ["vitamina-d", "nutrición"]
+
+  # Reglas de anemia
+  - id: "hemoglobin_low"
+    name: "Hemoglobina baja"
+    enabled: true
+    when:
+      all:
+        - biomarker: "hemoglobin"
+          operator: "<"
+          value: 12
+    then:
+      severity: "yellow"
+      headline: "Hemoglobina baja: posible anemia"
+      why: "Hemoglobina < 12 g/dL sugiere anemia"
+      actions:
+        - "consult_physician"
+        - "iron_supplement"
+        - "repeat_test:1-3 meses"
+      tags: ["anemia", "hemoglobina"]
+  
+  - id: "ferritin_low"
+    name: "Ferritina baja"
+    enabled: true
+    when:
+      all:
+        - biomarker: "ferritin"
+          operator: "<"
+          value: 15
+    then:
+      severity: "yellow"
+      headline: "Ferritina baja: depósitos de hierro agotados"
+      why: "Ferritina < 15 ng/mL indica deficiencia de hierro"
+      actions:
+        - "iron_supplement"
+        - "consult_physician"
+        - "repeat_test:2-3 meses"
+      tags: ["anemia", "hierro", "ferritina"]
+
+  # Reglas de inflamación
+  - id: "hs_crp_high_risk"
+    name: "hs-CRP alto riesgo"
+    enabled: true
+    when:
+      all:
+        - biomarker: "hs_crp"
+          operator: ">"
+          value: 3.0
+    then:
+      severity: "orange"
+      headline: "hs-CRP elevado: mayor riesgo cardiovascular"
+      why: "hs-CRP > 3.0 mg/L se asocia con mayor riesgo cardiovascular"
+      actions:
+        - "consult_physician"
+        - "lifestyle_changes"
+      tags: ["inflamación", "cardiovascular", "hs-crp"]
+
+  # Reglas renales
+  - id: "egfr_reduced"
+    name: "eGFR reducido"
+    enabled: true
+    when:
+      all:
+        - biomarker: "egfr"
+          operator: "<"
+          value: 60
+    then:
+      severity: "orange"
+      headline: "Función renal reducida: requiere evaluación"
+      why: "eGFR < 60 mL/min/1.73m² indica función renal reducida"
+      actions:
+        - "renal_specialist"
+        - "monitor_bp"
+        - "repeat_test:3-6 meses"
+      tags: ["renal", "egfr", "función-renal"]
+

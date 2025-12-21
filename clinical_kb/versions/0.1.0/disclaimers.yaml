@@ -1,0 +1,57 @@
+# Deslindes y Guías de Lenguaje
+# Este archivo contiene:
+# 1. Deslindes legales que deben mostrarse (no diagnóstico, no tratamiento, emergencias)
+# 2. Guías de lenguaje que deben seguirse al escribir reglas (qué palabras usar/evitar)
+# 3. Tono y estilo recomendado para comunicación con pacientes
+# Es crítico para cumplir con regulaciones y mantener un lenguaje apropiado.
+
+disclaimers:
+  general:
+    text: "Este sistema no proporciona diagnóstico médico ni tratamiento. Las recomendaciones son informativas y no sustituyen la consulta con un profesional de la salud."
+    priority: "critical"
+  
+  no_diagnosis:
+    text: "Las reglas evaluadas NO constituyen un diagnóstico. Solo un profesional de la salud calificado puede diagnosticar condiciones médicas."
+    priority: "high"
+  
+  no_treatment:
+    text: "Este sistema NO prescribe tratamientos ni medicamentos. Todas las decisiones de tratamiento deben ser tomadas por un médico."
+    priority: "high"
+  
+  consultation_required:
+    text: "Siempre consulta con tu médico antes de hacer cambios en medicamentos, dieta, o estilo de vida basados en estos resultados."
+    priority: "high"
+  
+  emergency:
+    text: "Si experimentas síntomas de emergencia (dolor en el pecho, dificultad para respirar, confusión severa), busca atención médica inmediata. No uses este sistema en emergencias."
+    priority: "critical"
+  
+  reference_ranges:
+    text: "Los rangos de referencia pueden variar entre laboratorios y poblaciones. Consulta con tu médico sobre los rangos específicos aplicables a ti."
+    priority: "medium"
+  
+  individual_variation:
+    text: "Los valores normales pueden variar según edad, sexo, estado de salud, y otros factores individuales. Tu médico puede interpretar tus resultados en contexto."
+    priority: "medium"
+
+language_guidelines:
+  must_use:
+    - "Discute con tu médico"
+    - "Considera"
+    - "Puede requerir"
+    - "Consulta con"
+    - "Recomendamos consultar"
+  
+  must_not_use:
+    - "Tienes [condición]" (diagnóstico)
+    - "Debes tomar [medicamento]" (prescripción)
+    - "Estás enfermo" (diagnóstico)
+    - "Toma [medicamento]" (prescripción)
+  
+  tone:
+    - "Respetuoso"
+    - "Informativo"
+    - "No alarmista"
+    - "Dirigido al paciente"
+    - "Recomendaciones claras y accionables"
+
