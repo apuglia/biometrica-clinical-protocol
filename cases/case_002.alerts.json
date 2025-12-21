@@ -1,0 +1,113 @@
+{
+  "kb_version": "0.1.0",
+  "case_id": "case_002",
+  "patient": {
+    "age": 58,
+    "sex": "male"
+  },
+  "red_flags": [
+    {
+      "alert_id": "redflag_glucose_critical",
+      "name": "Glucosa críticamente alta",
+      "headline": "Glucosa críticamente elevada: requiere atención inmediata",
+      "why": "Los niveles de glucosa superan 400 mg/dL, lo cual puede indicar una emergencia médica",
+      "actions": [
+        "urgent_care",
+        "consult_physician"
+      ],
+      "doctor_questions": [
+        "¿Tienes síntomas de cetoacidosis o hiperglucemia hiperosmolar?",
+        "¿Estás tomando medicamentos para la diabetes?",
+        "¿Has tenido episodios previos similares?"
+      ],
+      "tags": [
+        "emergencia",
+        "glucosa",
+        "diabetes"
+      ],
+      "trace": {
+        "fired_because": [
+          "glucose (485) es mayor o igual que 400"
+        ],
+        "conditions_met": [
+          {
+            "biomarker": "glucose",
+            "condition": ">= 400",
+            "value": 485
+          }
+        ]
+      }
+    },
+    {
+      "alert_id": "redflag_potassium_critical",
+      "name": "Potasio críticamente alto",
+      "headline": "Potasio críticamente elevado: riesgo cardíaco",
+      "why": "Los niveles de potasio superan 6.5 mEq/L, lo cual puede causar arritmias cardíacas peligrosas",
+      "actions": [
+        "urgent_care",
+        "avoid_potassium",
+        "consult_physician"
+      ],
+      "doctor_questions": [
+        "¿Tienes síntomas como debilidad muscular o palpitaciones?",
+        "¿Tienes función renal alterada?",
+        "¿Estás tomando medicamentos que afecten el potasio?"
+      ],
+      "tags": [
+        "emergencia",
+        "electrolitos",
+        "cardíaco"
+      ],
+      "trace": {
+        "fired_because": [
+          "potassium (6.8) es mayor o igual que 6.5"
+        ],
+        "conditions_met": [
+          {
+            "biomarker": "potassium",
+            "condition": ">= 6.5",
+            "value": 6.8
+          }
+        ]
+      }
+    },
+    {
+      "alert_id": "redflag_creatinine_critical",
+      "name": "Función renal críticamente alterada",
+      "headline": "Función renal severamente alterada",
+      "why": "La creatinina está muy elevada, indicando posible insuficiencia renal aguda o crónica avanzada",
+      "actions": [
+        "renal_specialist",
+        "urgent_care",
+        "monitor_bp"
+      ],
+      "doctor_questions": [
+        "¿Tienes antecedentes de enfermedad renal?",
+        "¿Has tenido cambios en la producción de orina?",
+        "¿Estás tomando medicamentos nefrotóxicos?"
+      ],
+      "tags": [
+        "emergencia",
+        "renal",
+        "función-renal"
+      ],
+      "trace": {
+        "fired_because": [
+          "creatinine (3.8) es mayor o igual que 3"
+        ],
+        "conditions_met": [
+          {
+            "biomarker": "creatinine",
+            "condition": ">= 3",
+            "value": 3.8
+          }
+        ]
+      }
+    }
+  ],
+  "trace": {
+    "alerts_evaluated": 3,
+    "alerts_fired": 3,
+    "timestamp": "2025-12-21T21:23:50.601Z"
+  }
+}

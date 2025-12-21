@@ -1,0 +1,14 @@
+{
+  "kb_version": "0.1.0",
+  "case_id": "case_001",
+  "patient": {
+    "age": 34,
+    "sex": "male"
+  },
+  "red_flags": [],
+  "trace": {
+    "alerts_evaluated": 3,
+    "alerts_fired": 0,
+    "timestamp": "2025-12-21T21:24:01.325Z"
+  }
+}

@@ -4,7 +4,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "kb:lint": "tsx src/kb/loader.ts --lint"
+    "kb:lint": "tsx src/kb/loader.ts --lint",
+    "case:ranges": "tsx src/ranges/cli.ts",
+    "case:alerts": "tsx src/alerts/cli.ts"
   },
   "dependencies": {
     "yaml": "^2.3.4",

@@ -1,0 +1,25 @@
+{
+  "case_id": "case_002",
+  "patient": {
+    "age": 58,
+    "sex": "male"
+  },
+  "observations": [
+    {
+      "biomarker": "glucose",
+      "value": 485,
+      "unit": "mg/dL"
+    },
+    {
+      "biomarker": "potassium",
+      "value": 6.8,
+      "unit": "mEq/L"
+    },
+    {
+      "biomarker": "creatinine",
+      "value": 3.8,
+      "unit": "mg/dL"
+    }
+  ]
+}
+

@@ -1,0 +1,35 @@
+{
+  "case_id": "case_001",
+  "patient": {
+    "age": 34,
+    "sex": "male"
+  },
+  "observations": [
+    {
+      "biomarker": "ldl_c",
+      "value": 165,
+      "unit": "mg/dL"
+    },
+    {
+      "biomarker": "hdl_c",
+      "value": 42,
+      "unit": "mg/dL"
+    },
+    {
+      "biomarker": "glucose",
+      "value": 105,
+      "unit": "mg/dL"
+    },
+    {
+      "biomarker": "vitamin_d_25oh",
+      "value": 18,
+      "unit": "ng/mL"
+    },
+    {
+      "biomarker": "hemoglobin",
+      "value": 14.5,
+      "unit": "g/dL"
+    }
+  ]
+}
+

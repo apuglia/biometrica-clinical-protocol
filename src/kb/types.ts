@@ -55,6 +55,7 @@ export type Biomarker = z.infer<typeof BiomarkerSchema>;
 export type BiomarkerDictionary = z.infer<typeof BiomarkerDictionarySchema>;
 
 // ========== Reference Range schema ==========
+// Usar passthrough para permitir campos adicionales que no están en el schema base
 export const ReferenceRangeSchema = z.object({
   biomarker: z.string(),
   optimal: z.string().optional(),
@@ -76,7 +77,18 @@ export const ReferenceRangeSchema = z.object({
   optimal_female: z.string().optional(),
   low_male: z.string().optional(),
   low_female: z.string().optional(),
-});
+  prediabetes: z.string().optional(),
+  diabetes: z.string().optional(),
+  critical: z.string().optional(),
+  desirable: z.string().optional(),
+  mildly_reduced: z.string().optional(),
+  moderately_reduced: z.string().optional(),
+  severely_reduced: z.string().optional(),
+  kidney_failure: z.string().optional(),
+  low_risk: z.string().optional(),
+  moderate_risk: z.string().optional(),
+  high_risk: z.string().optional(),
+}).passthrough(); // Permite campos adicionales no definidos explícitamente
 
 export const ReferenceRangesSchema = z.object({
   reference_ranges: z.array(ReferenceRangeSchema),
