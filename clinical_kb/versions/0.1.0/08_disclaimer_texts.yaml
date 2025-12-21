@@ -43,10 +43,10 @@ language_guidelines:
     - "Recomendamos consultar"
   
   must_not_use:
-    - "Tienes [condición]" (diagnóstico)
-    - "Debes tomar [medicamento]" (prescripción)
-    - "Estás enfermo" (diagnóstico)
-    - "Toma [medicamento]" (prescripción)
+    - "Tienes [condición] (diagnóstico)"
+    - "Debes tomar [medicamento] (prescripción)"
+    - "Estás enfermo (diagnóstico)"
+    - "Toma [medicamento] (prescripción)"
   
   tone:
     - "Respetuoso"

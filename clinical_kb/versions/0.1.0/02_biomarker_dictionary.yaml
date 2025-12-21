@@ -1,7 +1,13 @@
-# Biomarcadores
+# Diccionario de Biomarcadores
 # Este archivo define todos los biomarcadores disponibles en el sistema.
 # Cada biomarcador incluye: ID único, nombre legible, unidad de medida, categoría y descripción.
 # Los biomarcadores se usan en reglas, reference ranges y para validar inputs de laboratorio.
+#
+# Para biomarcadores calculados (no medidos directamente), incluir campos opcionales:
+#   - calculated: true (indica que es un valor calculado)
+#   - depends_on: [array de IDs de biomarcadores requeridos para el cálculo]
+#   - calculation_method: "nombre del método" (ej: "Friedewald", "CKD-EPI", "MDRD")
+#   - formula: "descripción o fórmula de referencia" (opcional, para documentación)
 
 biomarkers:
   # Lípidos
@@ -10,6 +16,10 @@ biomarkers:
     unit: "mg/dL"
     category: "lipid"
     description: "Colesterol de lipoproteínas de baja densidad"
+    calculated: true
+    depends_on: ["total_cholesterol", "hdl_c", "triglycerides"]
+    calculation_method: "Friedewald"
+    formula: "LDL = Total Cholesterol - HDL - (Triglycerides / 5). Solo válido si Triglycerides < 400 mg/dL"
   
   - id: "hdl_c"
     name: "Colesterol HDL"
@@ -94,6 +104,10 @@ biomarkers:
     unit: "mL/min/1.73m²"
     category: "renal"
     description: "eGFR - estimación de la función renal"
+    calculated: true
+    depends_on: ["creatinine"]
+    calculation_method: "CKD-EPI"
+    formula: "Requiere creatinina, edad, sexo y raza. Se calcula usando ecuación CKD-EPI."
 
   # Electrolytes
   - id: "potassium"
